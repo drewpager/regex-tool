@@ -1,38 +1,218 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0;
+  /* Light gray background */
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  background-color: #000000;
+  /* Siege Media Black */
+  min-height: 100vh;
+  color: #ffffff;
+  /* White text for contrast */
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.app-header h1 {
+  font-size: 2.5em;
+  color: #e51e2b;
+  /* Siege Media Red */
+  margin-bottom: 10px;
+}
+
+.app-header .subtitle {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+.tool-card {
+  background-color: #ffffff;
+  /* White card background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  color: #333;
+  /* Dark text for readability on white background */
+}
+
+.options-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.option-group {
+  flex: 1;
+  min-width: 280px;
+  margin-right: 20px;
+}
+
+.option-group:last-child {
+  margin-right: 0;
+}
+
+.option-group h2 {
+  font-size: 1.2em;
+  color: #e51e2b;
+  /* Siege Media Red for headings */
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.radio-label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.95em;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.radio-label:hover {
+  background-color: #f8f8f8;
+}
+
+.radio-label input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #e51e2b;
+  /* Red radio buttons */
+}
+
+.url-example {
+  font-size: 0.9em;
+  color: #333;
+}
+
+.option-label-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.option-description {
+  font-weight: 500;
+  color: #555;
+}
+
+.removed-part {
+  color: #e51e2b;
+  text-decoration: line-through;
+}
+
+.remaining-part {
+  color: #333;
+  font-weight: 500;
+}
+
+.input-section {
+  margin-bottom: 30px;
+}
+
+.input-section h2 {
+  font-size: 1.2em;
+  color: #e51e2b;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.input-section p {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.url-textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95em;
+  resize: vertical;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.process-button {
+  background-color: #e51e2b;
+  /* Siege Media Red */
   color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.process-button:hover {
+  background-color: #c01a24;
+  /* Darker red on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.output-section h2 {
+  font-size: 1.2em;
+  color: #e51e2b;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.output-textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95em;
+  background-color: #f9f9f9;
+  color: #333;
+  resize: vertical;
+}
+
+.copy-status {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #008000;
+  /* Green for success */
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .options-section {
+    flex-direction: column;
+  }
+
+  .option-group {
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 }
